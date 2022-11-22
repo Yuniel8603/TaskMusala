@@ -6,7 +6,9 @@
   "scripts": {
     "cypress:open chrome": "cypress open --browser chrome --e2e",
     "cypress:open firefox": "cypress open --browser firefox --e2e",
-    "cypress:open parallizacion": "cypress run --record --parallel"
+    "cypress:open parallizacion": "cypress run --record --parallel",
+    "cypress:run Chrome": "cypress run --record --parallel"
+    
     
   },
 
