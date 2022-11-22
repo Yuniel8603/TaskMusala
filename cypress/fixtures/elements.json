@@ -1,0 +1,10 @@
+{
+    "nombre": "#cf-1",
+    "correo": "#cf-2",
+    "movil": "#cf-3",
+    "asunto": "#cf-4",
+    "mensaje": "#cf-5",
+    "codigo": "#siwp_captcha_value_0",
+    "boton": "p > .wpcf7-form-control"
+     
+}
