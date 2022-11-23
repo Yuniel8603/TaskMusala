@@ -54,7 +54,7 @@ describe("Suite test Musala",function(){
         cy.get('.square-requirements').children('div.joinus-content:nth-child(1) > div:nth-child(2) > div:nth-child(2)').should('contain', 'Requirements');
         cy.get('.square-requirements').children('div.joinus-content:nth-child(2) > div:nth-child(1) > div:nth-child(2) > h2:nth-child(1)').should('contain', 'Responsibilities');
         cy.get('.square-requirements').children('div.joinus-content:nth-child(2) > div:nth-child(2) > div:nth-child(2) > h2:nth-child(1))').should('contain', 'What we offer');
-
+       cy.get()
 
 
 

@@ -6,12 +6,9 @@
   "scripts": {
     "cypress:open chrome": "cypress open --browser chrome --e2e",
     "cypress:open firefox": "cypress open --browser firefox --e2e",
-    "cypress:open parallizacion": "cypress run --record --parallel",
+    "html report ": "cypress run --spec cypress/e2e/testcaseMusala.cy.js --browser chrome --headless",
     "cypress:run Chrome": "cypress run --record --parallel"
-    
-    
   },
-
   "keywords": [
     "test",
     "cypress",
@@ -21,6 +18,10 @@
   "author": "Yuniel Peraza",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^11.1.0"
+    "cypress": "^11.1.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-esbuild-preprocessor": "^1.0.2",
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "esbuild": "^0.15.15"
   }
 }
