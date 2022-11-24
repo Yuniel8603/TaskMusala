@@ -58,6 +58,7 @@ describe("Suite test Musala",function(){
             cy.get (elements.nombre).type('').should('contain','The field is required.');
             cy.get (elements.correo).type('prueba@prueba').should('contains','The e-mail address entered is invalid.');
             cy.get (elements.movil).type('54830946');
+            
             const fileName = "Curriculum prueba.pdf";
             const fileType = "application/pdf";
             const selector = "#uploadtextfield";
@@ -77,7 +78,11 @@ describe("Suite test Musala",function(){
     })
 
     it('case4',function(){
-        
+        cy.get('#menu > ul:nth-child(1) > li:nth-child(5) > a:nth-child(1)').click(); 
+        cy.get('.contact-label-code').click(); 
+        cy.url().should('eq', 'https://www.musala.com/careers/join-us/');
+        cy.get('#menu > ul:nth-child(1) > li:nth-child(5) > a:nth-child(1)').click();         
+        cy.get('#get_location').select('#get_location > option:nth-child(4)').click();  
 
         
     })
