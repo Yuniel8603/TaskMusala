@@ -18,10 +18,18 @@
   "author": "Yuniel Peraza",
   "license": "ISC",
   "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "cypress": "^11.1.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-esbuild-preprocessor": "^1.0.2",
     "cypress-mochawesome-reporter": "^3.2.3",
+    "cypress-upload-file": "^1.0.6",
     "esbuild": "^0.15.15"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^14.0.0"
   }
 }

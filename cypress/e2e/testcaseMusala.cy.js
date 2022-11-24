@@ -36,8 +36,7 @@ describe("Suite test Musala",function(){
         cy.get('.company-members').children('.cm-content').should('contain', 'Leadership');
         cy.get('.musala-icon-facebook').click({force: true});
         cy.url().should('eq', 'https://www.facebook.com/MusalaSoft?fref=ts');
-        //cy.get('.xzbmw64 > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > g:nth-child(2)');
-        //cy.window().should('have.a.property', '')
+        
 
     })
 
@@ -50,11 +49,27 @@ describe("Suite test Musala",function(){
         cy.get('#get_location').select('#get_location > option:nth-child(2)').click();
         cy.get('article.card-jobsHot:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > div:nth-child(2) > img:nth-child(1)').click();
         cy.url().should('eq', 'https://www.musala.com/job/senior-ui-ux-designer/');
-        cy.get('.square-requirements').children('.div.joinus-content:nth-child(1) > div:nth-child(1) > div:nth-child(2)').should('contain', 'General description');
-        cy.get('.square-requirements').children('div.joinus-content:nth-child(1) > div:nth-child(2) > div:nth-child(2)').should('contain', 'Requirements');
-        cy.get('.square-requirements').children('div.joinus-content:nth-child(2) > div:nth-child(1) > div:nth-child(2) > h2:nth-child(1)').should('contain', 'Responsibilities');
-        cy.get('.square-requirements').children('div.joinus-content:nth-child(2) > div:nth-child(2) > div:nth-child(2) > h2:nth-child(1))').should('contain', 'What we offer');
-       cy.get()
+        cy.contains('.square-requirements').children('.div.joinus-content:nth-child(1) > div:nth-child(1) > div:nth-child(2)').should('contain', 'General description');
+        cy.contains('.square-requirements').children('div.joinus-content:nth-child(1) > div:nth-child(2) > div:nth-child(2)').should('contain', 'Requirements');
+        cy.contains('.square-requirements').children('div.joinus-content:nth-child(2) > div:nth-child(1) > div:nth-child(2) > h2:nth-child(1)').should('contain', 'Responsibilities');
+        cy.contains('.square-requirements').children('div.joinus-content:nth-child(2) > div:nth-child(2) > div:nth-child(2) > h2:nth-child(1))').should('contain', 'What we offer');
+        cy.contains('.btn-join-us').click();
+        cy.fixture('elements').then((elements)=>{
+            cy.get (elements.nombre).type('').should('contain','The field is required.');
+            cy.get (elements.correo).type('prueba@prueba').should('contains','The e-mail address entered is invalid.');
+            cy.get (elements.movil).type('54830946');
+            const fileName = "Curriculum prueba.pdf";
+            const fileType = "application/pdf";
+            const selector = "#uploadtextfield";
+        
+            uploadFile(selector, fileName, fileType);
+            cy.get("#uploadtextfield").click();
+            cy.get("##uploadtextfield").contains("Curriculum prueba");
+            cy.get('#cf-5').type("Yuniel");
+            cy.get('#cf-6').type('Prueba');
+            cy.get('#adConsentChx [type="checkbox"]').not('[disabled]').check().should('be.checked');
+            cy.get('.has-spinner').click();
+
 
 
 
@@ -62,8 +77,9 @@ describe("Suite test Musala",function(){
     })
 
     it('case4',function(){
+        
 
         
     })
 
-})
+})});
